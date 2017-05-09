@@ -58,7 +58,6 @@
                                             console.log(elT);
                                             formatted = formatted.replace(new RegExp(elT.replace('t.php?file=',''), "g"), torrents[elT]);
                                         });
-                                        console.log(formatted);
                                         el.innerHTML = formatted;
                                     }
                                 });
