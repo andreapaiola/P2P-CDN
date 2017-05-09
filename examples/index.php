@@ -115,7 +115,7 @@ function formatFileSize($bytes)
 Codice Libero ('.formatFileSize($pdf['size']).') - last modified on '.date('l jS \of F Y h:i:s A',$pdf['lastmod']).'</a>'); ?>
 
 
-<h2>Audio with outoplay</h2>
+<h2>Audio with autoplay</h2>
 <?php $audio=$p2pCdn->file('AudioTest.ogg'); ?>
 
 <?php echo $p2pCdn->render(array('audio'=>$audio),'<audio controls="controls" autoplay>
