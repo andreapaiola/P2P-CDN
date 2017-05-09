@@ -38,7 +38,7 @@ require_once '../P2p-Cdn.php';
 <body>
 
 <h1>WebTorrent CDN Examples (PHP)</h1>
-
+<p>See the browser console :)</p>
 <?php
 $p2pCdn = new P2p_Cdn();
 $file1=$p2pCdn->file('IMG_20170218_122147549.jpg');
