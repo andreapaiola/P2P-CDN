@@ -34,10 +34,33 @@ Generate the torrent with PHP
 --------------------------------------
 
 [Torrent.php used in examples by Adrien Gibrat](https://github.com/adriengibrat/torrent-rw/blob/master/Torrent.php)
+ or... ?
+
+Submit your suggestion!
+
+
+Torrent announce trackers
+--------------------------------------
+
+Default torrent announce/trackers:
+
+udp://tracker.openbittorrent.com:80
+udp://tracker.internetwarriors.net:1337
+udp://tracker.leechers-paradise.org:6969
+udp://tracker.coppersurfer.tk:6969
+udp://exodus.desync.com:6969
+wss://tracker.btorrent.xyz
+wss://tracker.openwebtorrent.com
+wss://tracker.fastcast.nz
+
+You can setup you're private tracker with [bittorrent-tracker](https://github.com/webtorrent/bittorrent-tracker) or
+what you prefer.
 
 
 TODO - wish list
 --------------------------------------
+
+Configurable torrent trackers
 
 composer.json
 
