@@ -53,7 +53,7 @@ wss://tracker.btorrent.xyz
 wss://tracker.openwebtorrent.com
 wss://tracker.fastcast.nz
 
-You can setup you're private tracker with [bittorrent-tracker](https://github.com/webtorrent/bittorrent-tracker) or
+You can setup a private tracker with [bittorrent-tracker](https://github.com/webtorrent/bittorrent-tracker) or
 what you prefer.
 
 
