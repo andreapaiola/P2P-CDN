@@ -20,7 +20,7 @@
  *
  * @link        Homepage:     https://andreapaiola.name
  *              Examples:     https://github.com/andreapaiola/P2P-CDN/blob/master/examples
- *              GitHub Repo:  https://github.com/andreapaiola/P2P-CDN/Mobile-Detect
+ *              GitHub Repo:  https://github.com/andreapaiola/P2P-CDN
  */
 
 class P2p_Cdn
