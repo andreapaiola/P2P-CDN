@@ -125,7 +125,7 @@ Codice Libero ('.formatFileSize($pdf['size']).') - last modified on '.date('l jS
 
 
 
-<script src="../webtorrent.min.js"></script>
+<script src="webtorrent.min.js"></script>
 <script>
 
 </script>
