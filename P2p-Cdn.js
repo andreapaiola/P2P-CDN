@@ -1,3 +1,32 @@
+/**
+ * P2P-CDN
+ * =======
+ *
+ * The LAMP hosting is the most popular choice when you want to public on the Web.
+ * It's cheap and it's fast, but if you want to publish heavy contents like high
+ * quality photos, audio or videos with many users could become a problem.
+ * Maybe you want to reduce your hosting bill.
+ * This is an easy and accessible (lazy load with graceful degradation) fix:
+ * you can stream all you're heavy files (PDFs included, see examples!) with much
+ * less bandwidth, sharing the bandwidth of your users.
+ * Without Javascript or WebRTC all the contents load normally: it's SEO friendly.
+ *
+ * This is ECMAScript 6
+ * https://youtrack.jetbrains.com/issue/WI-31003
+ *
+ * You can transpile with Babel https://babeljs.io/
+ *
+ * @author      Current authors: Andrea Paiola <andreapaiola@gmail.com>
+ *
+ * @license     Code and contributions have 'MIT License'
+ *              More details: https://github.com/andreapaiola/P2P-CDN/blob/master/LICENSE.txt
+ *
+ * @link        Homepage:     https://andreapaiola.name
+ *              Examples:     https://github.com/andreapaiola/P2P-CDN/blob/master/examples
+ *              GitHub Repo:  https://github.com/andreapaiola/P2P-CDN/Mobile-Detect
+ */
+
+
 'use strict';
 (function (root, p2pCdn) {
 
