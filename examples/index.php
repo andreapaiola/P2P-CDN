@@ -123,14 +123,8 @@ Codice Libero ('.formatFileSize($pdf['size']).') - last modified on '.date('l jS
   <source src="{audio}" type="audio/ogg">
 </audio>'); ?>
 
-
-
 <script src="webtorrent.min.js"></script>
-<script>
-
-</script>
 <script src="../P2p-Cdn.js"></script>
-
 
 </body>
 </html>

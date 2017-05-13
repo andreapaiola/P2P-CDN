@@ -47,6 +47,18 @@
     // Do not initialize p2pCdn when running server side, handle it in client:
     if (typeof window !== 'object' || (!WebTorrent.WEBRTC_SUPPORT)) return;
 
+    // Define torrent trackers, here you can define you're private trackers
+    var trackers = [
+        'udp://tracker.openbittorrent.com:80'
+        ,'udp://tracker.internetwarriors.net:1337'
+        ,'udp://tracker.leechers-paradise.org:6969'
+        ,'udp://tracker.coppersurfer.tk:6969'
+        ,'udp://exodus.desync.com:6969'
+        ,'wss://tracker.btorrent.xyz'
+        ,'wss://tracker.openwebtorrent.com'
+        ,'wss://tracker.fastcast.nz'
+    ];
+
     document.addEventListener("DOMContentLoaded", function (event) {
 
         var client = new WebTorrent();
@@ -64,16 +76,7 @@
                     if (torrents[torrentFileURL]===undefined) {
                         torrents[torrentFileURL] = '';
                         client.add(location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '')+location.pathname+torrentFileURL, {
-                            announce: [
-                                'udp://tracker.openbittorrent.com:80'
-                                ,'udp://tracker.internetwarriors.net:1337'
-                                ,'udp://tracker.leechers-paradise.org:6969'
-                                ,'udp://tracker.coppersurfer.tk:6969'
-                                ,'udp://exodus.desync.com:6969'
-                                ,'wss://tracker.btorrent.xyz'
-                                ,'wss://tracker.openwebtorrent.com'
-                                ,'wss://tracker.fastcast.nz'
-                            ]
+                            announce: trackers
                         }, function (torrent) {
                             torrent.files[0].getBlobURL(function (err, url) {
                                 if (err) throw err;
