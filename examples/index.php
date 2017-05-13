@@ -125,6 +125,19 @@ Codice Libero ('.formatFileSize($pdf['size']).') - last modified on '.date('l jS
 
 <script src="webtorrent.min.js"></script>
 <script src="../P2p-Cdn.js"></script>
+<script>
+    // Define torrent trackers, here you can define you're private trackers if you want
+    var P2PCDNTrackers = [
+        'udp://tracker.openbittorrent.com:80'
+        ,'udp://tracker.internetwarriors.net:1337'
+        ,'udp://tracker.leechers-paradise.org:6969'
+        ,'udp://tracker.coppersurfer.tk:6969'
+        ,'udp://exodus.desync.com:6969'
+        ,'wss://tracker.btorrent.xyz'
+        ,'wss://tracker.openwebtorrent.com'
+        ,'wss://tracker.fastcast.nz'
+    ];
+</script>
 
 </body>
 </html>
