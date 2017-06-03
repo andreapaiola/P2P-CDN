@@ -16,7 +16,7 @@
  *
  * You can transpile with Babel https://babeljs.io/
  *
- * @author      Current authors: Andrea Paiola <andreapaiola@gmail.com>
+ * @author      Current authors: Andrea Paiola <andrea.paiola@gmail.com>
  *
  * @license     Code and contributions have 'MIT License'
  *              More details: https://github.com/andreapaiola/P2P-CDN/blob/master/LICENSE.txt

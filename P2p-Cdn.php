@@ -13,7 +13,7 @@
  * less bandwidth, sharing the bandwidth of your users.
  * Without Javascript or WebRTC all the contents load normally: it's SEO friendly.
  *
- * @author      Current authors: Andrea Paiola <andreapaiola@gmail.com>
+ * @author      Current authors: Andrea Paiola <andrea.paiola@gmail.com>
  *
  * @license     Code and contributions have 'MIT License'
  *              More details: https://github.com/andreapaiola/P2P-CDN/blob/master/LICENSE.txt
