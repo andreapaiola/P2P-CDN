@@ -62,11 +62,10 @@ Apache notes
 Disabled gzip compression for .mp4 files with
 
 SetOutputFilter DEFLATE
+
 SetEnvIfNoCase Request_URI \.mp4$ no-gzip dont-vary
 
-in the .htaccess
-
-if you see [this error](https://github.com/webtorrent/webtorrent/issues/1080)
+in the .htaccess if you see [this error](https://github.com/webtorrent/webtorrent/issues/1080)
 
 TODO - wish list
 --------------------------------------
