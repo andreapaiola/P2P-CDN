@@ -74,6 +74,8 @@ Configurable torrent trackers - done
 
 Configurable torrent endpoint - done
 
+WebRTC Peer-to-peer in Safari 11 - Test!
+
 composer.json
 
 documentation
