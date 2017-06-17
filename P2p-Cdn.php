@@ -43,14 +43,14 @@ class P2p_Cdn {
 
   public function file($filename) {
     if (file_exists($filename) && is_file($filename)) {
-      $file = [
+      $file = array(
         'size' => filesize($filename)
         ,'lastmod' => filemtime($filename)
         ,'filename' => $filename
         ,'realpath' => realpath($filename)
         ,'basename' => basename($filename)
         ,'dirname' => dirname($filename),
-      ];
+      );
       return $file;
     }
     else {
@@ -71,7 +71,7 @@ class P2p_Cdn {
         }
         $formatted = $format;
         $html .= ' data-torrents="';
-        $values = [];
+        $values = array();
         foreach ($files as $key => $value) {
           if (is_array($value) && isset($value['filename'])) {
             $value = $value['filename'];

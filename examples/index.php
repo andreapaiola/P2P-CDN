@@ -40,8 +40,9 @@ require_once '../P2p-Cdn.php';
 <h1>WebTorrent CDN Examples (PHP)</h1>
 <p>See the browser console :)</p>
 <?php
-$p2pCdn = new P2p_Cdn((isset($_SERVER['HTTPS']) ? "https" : "http") . '://'.$_SERVER['HTTP_HOST'].substr($_SERVER['REQUEST_URI'], 0, strrpos($_SERVER['REQUEST_URI'], '/') + 1).'t.php?file='); // Define the common endpoint
-//$p2pCdn = new P2p_Cdn('./t.php?file='); // Define the common endpoint
+/* Define the common endpoint */
+$p2pCdn = new P2p_Cdn((isset($_SERVER['HTTPS']) ? "https" : "http") . '://'.$_SERVER['HTTP_HOST'].substr($_SERVER['REQUEST_URI'], 0, strrpos($_SERVER['REQUEST_URI'], '/') + 1).'t.php?file=');
+
 $file1=$p2pCdn->file('IMG_20170218_122147549.jpg');
 ?>
 
