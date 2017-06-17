@@ -50,7 +50,8 @@
     document.addEventListener("DOMContentLoaded", function (event) {
 
         // Define torrent trackers, if you haven't
-        if( typeof P2PCDNTrackers=="undefined"){
+        if( typeof window.P2PCDNTrackers=="undefined" ){
+            console.log('Default P2PCDNTrackers');
             var P2PCDNTrackers = [
                 'udp://tracker.openbittorrent.com:80'
                 ,'udp://tracker.internetwarriors.net:1337'
@@ -61,6 +62,20 @@
                 ,'wss://tracker.openwebtorrent.com'
                 ,'wss://tracker.fastcast.nz'
             ];
+        }
+        else{
+            console.log('Custom P2PCDNTrackers');
+            var P2PCDNTrackers = window.P2PCDNTrackers;
+        }
+
+        if( typeof window.P2PCDNEndpoint=="undefined" ){
+            console.log('Default P2PCDNEndpoint');
+            var P2PCDNEndpoint = '?file=';
+        }
+        else
+        {
+            console.log('Custom P2PCDNEndpoint');
+            var P2PCDNEndpoint = window.P2PCDNEndpoint;
         }
 
         var client = new WebTorrent();
@@ -77,7 +92,7 @@
                 [].forEach.call(el.dataset.torrents.split(','), function(torrentFileURL) {
                     if (torrents[torrentFileURL]===undefined) {
                         torrents[torrentFileURL] = '';
-                        client.add(location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '')+location.pathname+torrentFileURL, {
+                        client.add(torrentFileURL, {
                             announce: P2PCDNTrackers
                         }, function (torrent) {
                             torrent.files[0].getBlobURL(function (err, url) {
@@ -90,7 +105,8 @@
                                         var formatted = el.dataset.formatted;
                                         [].forEach.call(eLTorrents, function (elT) {
                                             console.log(elT);
-                                            formatted = formatted.replace(new RegExp(elT.replace('t.php?file=',''), "g"), torrents[elT]);
+                                            console.log('P2PCDNEndpoint',P2PCDNEndpoint);
+                                            formatted = formatted.replace(new RegExp(elT.replace(P2PCDNEndpoint,''), "g"), torrents[elT]);
                                         });
                                         el.innerHTML = formatted;
                                     }

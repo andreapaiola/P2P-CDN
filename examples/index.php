@@ -40,7 +40,8 @@ require_once '../P2p-Cdn.php';
 <h1>WebTorrent CDN Examples (PHP)</h1>
 <p>See the browser console :)</p>
 <?php
-$p2pCdn = new P2p_Cdn();
+$p2pCdn = new P2p_Cdn((isset($_SERVER['HTTPS']) ? "https" : "http") . '://'.$_SERVER['HTTP_HOST'].substr($_SERVER['REQUEST_URI'], 0, strrpos($_SERVER['REQUEST_URI'], '/') + 1).'t.php?file='); // Define the common endpoint
+//$p2pCdn = new P2p_Cdn('./t.php?file='); // Define the common endpoint
 $file1=$p2pCdn->file('IMG_20170218_122147549.jpg');
 ?>
 
@@ -130,13 +131,11 @@ Codice Libero ('.formatFileSize($pdf['size']).') - last modified on '.date('l jS
     var P2PCDNTrackers = [
         'udp://tracker.openbittorrent.com:80'
         ,'udp://tracker.internetwarriors.net:1337'
-        ,'udp://tracker.leechers-paradise.org:6969'
-        ,'udp://tracker.coppersurfer.tk:6969'
-        ,'udp://exodus.desync.com:6969'
-        ,'wss://tracker.btorrent.xyz'
         ,'wss://tracker.openwebtorrent.com'
         ,'wss://tracker.fastcast.nz'
     ];
+    // Custom endpoint
+    var P2PCDNEndpoint = '<?php echo $p2pCdn->getEndpoint(); ?>';
 </script>
 
 </body>
