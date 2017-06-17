@@ -70,7 +70,9 @@ in the .htaccess if you see [this error](https://github.com/webtorrent/webtorren
 TODO - wish list
 --------------------------------------
 
-Configurable torrent trackers
+Configurable torrent trackers - done
+
+Configurable torrent endpoint - done
 
 composer.json
 
