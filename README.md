@@ -16,7 +16,7 @@ It's cheap and it's fast, but if you want to publish heavy contents like high qu
 users could become a problem. Maybe you want to reduce your hosting bill.
 
 This is an easy and accessible ([lazy load with graceful degradation](https://andreapaiola.name/2015-01-13-lazy-load/)) fix: 
-you can stream all you're heavy files (PDFs included, see examples!) with much less bandwidth, sharing the bandwidth
+you can stream all your heavy files (PDFs included, see examples!) with much less bandwidth, sharing the bandwidth
 of your users.
 
 Without Javascript or [WebRTC](http://caniuse.com/#search=webrtc) all the contents load normally: it's SEO friendly.
