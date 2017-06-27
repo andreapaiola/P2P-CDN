@@ -31,7 +31,7 @@ Richard: The delta in mean device efficiency? Yeah, it is. See, eventually, over
 
 Gavin: Holy shit!
 
-![alt text](https://cdn-images-1.medium.com/max/1920/1*iRwNkDy1d8JiR4LRWEDwOw.png "This explain everyting")
+![alt text](https://cdn-images-1.medium.com/max/1920/1*iRwNkDy1d8JiR4LRWEDwOw.png "This explain everything")
 
 
 
