@@ -21,6 +21,19 @@ of your users.
 
 Without Javascript or [WebRTC](http://caniuse.com/#search=webrtc) all the contents load normally: it's SEO friendly.
 
+Silicon Valley S04E04 - Teambuilding Exercise
+
+Richard: I read Peter's notes, all of them, and he knew that a peer-to-peer Internet was possible in the future, but he was also basing that on, what, old desktop computers. He never, ever foresaw the ubiquity or power of all of our modern-day smartphones. He was also dealing with a completely different Weissman limit. So... uh, yeah. Yeah. Okay.
+
+Gavin: What is that? Is that number correct?
+
+Richard: The delta in mean device efficiency? Yeah, it is. See, eventually, over time, this will render every server that Hooli operates obsolete, which would make Jack Barker shit himself.
+
+Gavin: Holy shit!
+
+![alt text](https://cdn-images-1.medium.com/max/1920/1*iRwNkDy1d8JiR4LRWEDwOw.png "This explain everyting")
+
+
 
 What is WebTorrent?
 --------------------------------------
