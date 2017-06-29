@@ -125,11 +125,11 @@
                             });
 
                             torrent.on('download', function (bytes) {
-                                console.log('download','numPeers: ' + torrent.numPeers,'downloadSpeed: ' + torrent.downloadSpeed);
+                                console.log('download','numPeers: '+torrent.numPeers,'downloadSpeed: '+torrent.downloadSpeed+' bytes/sec');
                             });
 
                             torrent.on('upload', function (bytes) {
-                                console.log('upload','numPeers: ' + torrent.numPeers,'uploadSpeed: ' + torrent.uploadSpeed);
+                                console.log('upload','numPeers: '+torrent.numPeers,'uploadSpeed: '+torrent.uploadSpeed+' bytes/sec');
                             });
 
                         });
