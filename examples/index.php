@@ -120,7 +120,7 @@ Codice Libero ('.formatFileSize($pdf['size']).') - last modified on '.date('l jS
 <h2>Audio with autoplay</h2>
 <?php $audio=$p2pCdn->file('AudioTest.ogg'); ?>
 
-<?php echo $p2pCdn->render(array('audio'=>$audio),'<audio controls="controls" autoplay>
+<?php echo $p2pCdn->render(array('audio'=>$audio),'<audio controls="controls" autoplay muted>
   Il tuo browser non supporta l\'elemento <code>audio</code>.
   <source src="{audio}" type="audio/ogg">
 </audio>'); ?>
@@ -129,13 +129,16 @@ Codice Libero ('.formatFileSize($pdf['size']).') - last modified on '.date('l jS
 <script src="../P2p-Cdn.js"></script>
 <script>
     // Define torrent trackers, here you can define you're private trackers if you want
+    // Look at the scope of the variable!
     var P2PCDNTrackers = [
         'udp://tracker.openbittorrent.com:80'
         ,'udp://tracker.internetwarriors.net:1337'
         ,'wss://tracker.openwebtorrent.com'
         ,'wss://tracker.fastcast.nz'
+        ,'udp://tracker.leechers-paradise.org:6969'
     ];
     // Custom endpoint
+    // Look at the scope of the variable!
     var P2PCDNEndpoint = '<?php echo $p2pCdn->getEndpoint(); ?>';
 </script>
 

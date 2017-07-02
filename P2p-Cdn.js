@@ -51,8 +51,7 @@
 
         // Define torrent trackers, if you haven't
         if( typeof window.P2PCDNTrackers=="undefined" ){
-            console.log('Default P2PCDNTrackers');
-            var P2PCDNTrackers = [
+            const P2PCDNTrackers = [
                 'udp://tracker.openbittorrent.com:80'
                 ,'udp://tracker.internetwarriors.net:1337'
                 ,'udp://tracker.leechers-paradise.org:6969'
@@ -62,26 +61,27 @@
                 ,'wss://tracker.openwebtorrent.com'
                 ,'wss://tracker.fastcast.nz'
             ];
+            console.log('Default P2PCDNTrackers',P2PCDNTrackers);
         }
         else{
-            console.log('Custom P2PCDNTrackers');
-            var P2PCDNTrackers = window.P2PCDNTrackers;
+            const P2PCDNTrackers = window.P2PCDNTrackers;
+            console.log('Custom P2PCDNTrackers',P2PCDNTrackers);
         }
 
         if( typeof window.P2PCDNEndpoint=="undefined" ){
-            console.log('Default P2PCDNEndpoint');
-            var P2PCDNEndpoint = '?file=';
+            const P2PCDNEndpoint = '?file=';
+            console.log('Default P2PCDNEndpoint',P2PCDNEndpoint);
         }
         else
         {
-            console.log('Custom P2PCDNEndpoint');
-            var P2PCDNEndpoint = window.P2PCDNEndpoint;
+            const P2PCDNEndpoint = window.P2PCDNEndpoint;
+            console.log('Custom P2PCDNEndpoint',P2PCDNEndpoint);
         }
 
-        var client = new WebTorrent();
-        var torrents = [];
+        const client = new WebTorrent();
+        const torrents = [];
 
-        var DOMElements = document.getElementsByClassName('p2p-cdn');
+        const DOMElements = document.getElementsByClassName('p2p-cdn');
 
         [].forEach.call(DOMElements, function (el) {
 
@@ -99,10 +99,10 @@
                                 if (err) throw err;
                                 torrents[torrentFileURL] = url;
                                 [].forEach.call(DOMElements, function (el) {
-                                    var eLTorrents = el.dataset.torrents.split(',');
+                                    const eLTorrents = el.dataset.torrents.split(',');
                                     if( eLTorrents.every(x => torrents[x]!='' ) && el.firstElementChild.tagName.toLowerCase()==='noscript' )
                                     {
-                                        var formatted = el.dataset.formatted;
+                                        let formatted = el.dataset.formatted;
                                         [].forEach.call(eLTorrents, function (elT) {
                                             console.log(elT);
                                             console.log('P2PCDNEndpoint',P2PCDNEndpoint);
