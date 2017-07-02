@@ -12,7 +12,7 @@ if( isset($_GET['file']) && !empty($_GET['file'])){
     function isOk($file){
         if(is_file($file)){
 
-            $ok = array('pdf','ogg','rar','tar','mp4','mp3','m3u','mpeg','mpg','jpeg','jpg','gif','png','bmp','psd','svg','zip','iso','webm','webp','weba','avi','tiff','tif');
+            $ok = array('pdf','ogg','rar','tar','mp4','mp3','m3u','mpeg','mpg','jpeg','jpg','gif','png','bmp','psd','svg','zip','iso','webm','webp','weba','avi','tiff','tif','iso');
 
             foreach($ok as $ext){
                 $ext = '.'.$ext;

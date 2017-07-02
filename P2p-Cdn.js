@@ -51,7 +51,7 @@
 
         // Define torrent trackers, if you haven't
         if( typeof window.P2PCDNTrackers=="undefined" ){
-            const P2PCDNTrackers = [
+            var P2PCDNTrackers = [
                 'udp://tracker.openbittorrent.com:80'
                 ,'udp://tracker.internetwarriors.net:1337'
                 ,'udp://tracker.leechers-paradise.org:6969'
@@ -64,7 +64,7 @@
             console.log('Default P2PCDNTrackers',P2PCDNTrackers);
         }
         else{
-            const P2PCDNTrackers = window.P2PCDNTrackers;
+            var P2PCDNTrackers = window.P2PCDNTrackers;
             console.log('Custom P2PCDNTrackers',P2PCDNTrackers);
         }
 
