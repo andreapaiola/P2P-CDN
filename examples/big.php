@@ -49,7 +49,7 @@ $file1=$p2pCdn->file('ubuntu-17.04-desktop-amd64.iso');
 
 ?>
 
-<?php echo $p2pCdn->render(array('file1'=>$file1),'<a href="{file1}" target="_blank">BIG FILE ubuntu-17.04-desktop-amd64.iso (not versioned)</a>'); ?>
+<?php echo $p2pCdn->render(array('file1'=>$file1),'<a href="{file1}" target="_blank">BIG FILE ubuntu-17.04-desktop-amd64 (not versioned)</a>'); ?>
 
 <script src="webtorrent.min.js"></script>
 <script src="../P2p-Cdn.js"></script>
