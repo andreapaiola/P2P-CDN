@@ -122,14 +122,28 @@
 
                             torrent.on('done', function () {
                                 console.log('done',torrent.files[0].path);
+                                console.log('infoSpeedDownload',torrent.infoSpeedDownload);
+                                //console.log('infoSpeedUpload',torrent.infoSpeedUpload);
+                                let average = (array) => array.reduce((a, b) => a + b) / array.length;
+                                console.log('Average download speed',average(torrent.infoSpeedDownload));
                             });
 
                             torrent.on('download', function (bytes) {
                                 console.log('download','numPeers: '+torrent.numPeers,'downloadSpeed: '+torrent.downloadSpeed+' bytes/sec');
+                                if( typeof torrent.infoSpeedDownload=='undefined' ){
+                                    torrent.infoSpeedDownload=[];
+                                }
+                                torrent.infoSpeedDownload.push(torrent.downloadSpeed);
                             });
 
                             torrent.on('upload', function (bytes) {
                                 console.log('upload','numPeers: '+torrent.numPeers,'uploadSpeed: '+torrent.uploadSpeed+' bytes/sec');
+                                /*
+                                if( typeof torrent.infoSpeedUpload=='undefined' ){
+                                    torrent.infoSpeedUpload=[];
+                                }
+                                torrent.infoSpeedUpload.push(torrent.infoSpeedUpload);
+                                */
                             });
 
                         });
