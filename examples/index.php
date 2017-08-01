@@ -15,6 +15,8 @@ require_once '../P2p-Cdn.php';
 
     <title>WebTorrent CDN Examples (PHP)</title>
 
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
     <style type="text/css">
         html,body{margin: 0;padding:0;}
         html {
@@ -78,7 +80,7 @@ $file1=$p2pCdn->file('IMG_20170218_122147549.jpg');
 <?php endif; ?>
 
 <h2>A video with preview</h2>
-
+<h3>partial download update example https://github.com/andreapaiola/P2P-CDN/issues/6</h3>
 <?php $file3=$p2pCdn->file('test.mp4'); ?>
 <?php $html='<video src="{video}" autoplay poster="{posterImg}">
 Sorry, your browser doesnt support embedded videos, 
@@ -86,7 +88,7 @@ but dont worry, you can <a href="{video}">download it</a>
 and watch it with your favorite video player!
 </video>'; ?>
 
-<?php echo $p2pCdn->render(array('posterImg'=>$file1,'video'=>$file3),$html); ?>
+<?php echo $p2pCdn->render(array('posterImg'=>$file1,'video'=>$file3),$html,true); // updatePartial: true ?>
 
 
 <?php $pdf=$p2pCdn->file('codice-libero.pdf'); ?>

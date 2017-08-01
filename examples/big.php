@@ -15,6 +15,8 @@ require_once '../P2p-Cdn.php';
 
     <title>WebTorrent CDN Examples (PHP) BIG FILE</title>
 
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
     <style type="text/css">
         html,body{margin: 0;padding:0;}
         html {

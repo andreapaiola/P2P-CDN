@@ -89,6 +89,21 @@
 
             if (WebTorrent.WEBRTC_SUPPORT) {
 
+                const updateDOM = function(el){
+                    console.log('updateDOM');
+                    const eLTorrents = el.dataset.torrents.split(',');
+                    if( eLTorrents.every(x => torrents[x]!='' ) && el.firstElementChild.tagName.toLowerCase()==='noscript' )
+                    {
+                        let formatted = el.dataset.formatted;
+                        [].forEach.call(eLTorrents, function (elT) {
+                            console.log(elT);
+                            console.log('P2PCDNEndpoint',P2PCDNEndpoint);
+                            formatted = formatted.replace(new RegExp(elT.replace(P2PCDNEndpoint,''), "g"), torrents[elT]);
+                        });
+                        el.innerHTML = formatted;
+                    }
+                };
+
                 [].forEach.call(el.dataset.torrents.split(','), function(torrentFileURL) {
                     if (torrents[torrentFileURL]===undefined) {
                         torrents[torrentFileURL] = '';
@@ -97,19 +112,10 @@
                         }, function (torrent) {
                             torrent.files[0].getBlobURL(function (err, url) {
                                 if (err) throw err;
+                                console.log(url);
                                 torrents[torrentFileURL] = url;
                                 [].forEach.call(DOMElements, function (el) {
-                                    const eLTorrents = el.dataset.torrents.split(',');
-                                    if( eLTorrents.every(x => torrents[x]!='' ) && el.firstElementChild.tagName.toLowerCase()==='noscript' )
-                                    {
-                                        let formatted = el.dataset.formatted;
-                                        [].forEach.call(eLTorrents, function (elT) {
-                                            console.log(elT);
-                                            console.log('P2PCDNEndpoint',P2PCDNEndpoint);
-                                            formatted = formatted.replace(new RegExp(elT.replace(P2PCDNEndpoint,''), "g"), torrents[elT]);
-                                        });
-                                        el.innerHTML = formatted;
-                                    }
+                                    updateDOM(el);
                                 });
                             });
 
@@ -137,6 +143,22 @@
                                 }
                                 torrent.infoSpeedDownload.push(torrent.downloadSpeed);
                                 */
+
+                                //console.log(torrent.files[0]);
+                                /* see https://github.com/andreapaiola/P2P-CDN/issues/6 */
+                                torrent.files[0].getBlobURL(function (err, url) {
+                                    console.log(url);
+                                    torrents[torrentFileURL] = url;
+                                    [].forEach.call(DOMElements, function (el) {
+                                        if(el.dataset.updatepartial==='updatePartial'){
+                                            console.log('Update partial');
+                                            updateDOM(el);
+                                        }
+                                    });
+                                });
+
+
+
                             });
 
                             torrent.on('upload', function (bytes) {

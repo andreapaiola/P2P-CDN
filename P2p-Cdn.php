@@ -58,7 +58,7 @@ class P2p_Cdn {
     }
   }
 
-  public function render($files, $format) {
+  public function render($files, $format, $updatePartial = false) {
     $html = '<span class="p2p-cdn"';
 
     if (is_array($files)) {
@@ -80,6 +80,9 @@ class P2p_Cdn {
         }
         $html .= implode(',', $values);
         $html .= '"';
+        if($updatePartial) {
+          $html .= ' data-updatepartial="updatePartial"';
+        }
         $html .= '>'; // close p2p-cdn span opening
         $html .= '<noscript>'; // Lazy load, see https://andreapaiola.name/2015-01-13-lazy-load/
         $html .= $formatted;
